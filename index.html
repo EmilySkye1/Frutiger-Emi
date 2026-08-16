@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Emily Skye</title>
+    <link rel="icon" type="image/png" href="assets/icons/start.png">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- ============================================================
+         BOOT SEQUENCE — logo screen, then intro video, then desktop
+         ============================================================ -->
+    <div class="boot-screen" id="boot-screen">
+    </div>
+
+    <div class="intro-video-wrap" id="intro-video-wrap">
+      <video id="intro-video" src="assets/intro.mp4" muted playsinline></video>
+    </div>
+
+    <!-- ============================================================
+         DESKTOP
+         ============================================================ -->
+    <div class="desktop" id="desktop">
+
+      <!-- dims + blurs on Aero Peek (hovering Show Desktop) -->
+      <div class="peek-overlay" id="peek-overlay"></div>
+      <div class="bubble-overlay" id="bubble-overlay"></div>
+
+      <div class="desktop-icons" id="desktop-icons">
+        <div class="icon" data-window="whoami-window">
+          <img src="assets/icons/icon1.ico" alt="">
+          <span>Who am I?</span>
+        </div>
+        <div class="icon" data-window="about-window">
+          <img src="assets/icons/icon2.ico" alt="">
+          <span>About me</span>
+        </div>
+        <div class="icon" data-window="interests-window">
+          <img src="assets/icons/icon3.ico" alt="">
+          <span>Interests</span>
+        </div>
+        <div class="icon" data-window="gallery-window">
+          <img src="assets/icons/icon5.ico" alt="">
+          <span>Gallery</span>
+        </div>
+        <div class="icon" data-window="dontlike-window">
+          <img src="assets/icons/icon6.ico" alt="">
+          <span>Don't like</span>
+        </div>
+        <div class="icon" data-window="mediaplayer-window">
+          <img src="assets/icons/media_player.ico" alt="">
+          <span>Media Player</span>
+        </div>
+        <div class="icon" data-window="emiclicker-window" data-game="emiclicker">
+          <img src="assets/icons/emiclicker.ico" alt="">
+          <span>Emi Clicker</span>
+        </div>
+        <div class="icon" data-window="emitap-window" data-game="emitap">
+          <img src="assets/icons/emitap.ico" alt="">
+          <span>Emi Tap</span>
+        </div>
+        <div class="icon" data-window="buddy-window" data-game="buddy">
+          <img src="assets/icons/buddy.ico" alt="">
+          <span>Buddy</span>
+        </div>
+        <div class="icon" data-window="contacts-window">
+          <img src="assets/icons/contacts.ico" alt="">
+          <span>Contacts</span>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           WINDOWS
+           every window is a .card with:
+             data-kind   -> groups it on the taskbar / peek stacking
+             data-title  -> shown on taskbar + peek
+             data-icon   -> shown on taskbar + peek
+           ============================================================ -->
+
+      <div class="card card-large" id="whoami-window" data-kind="whoami"
+           data-title="Who am I?" data-icon="assets/icons/icon1.ico"
+           style="top: 40px; left: 40px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/icon1.ico" alt="">
+            <h1>Who am I?</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body">
+            <span>Hii I am Emily Skye or just Emily,</span>
+            <span>I'm a very passionate artist and really cute person,</span>
+            <span>I'm also a transfem finsexual,</span>
+            <span>and I <b>LOVE</b> frutiger aero.</span>
+            <img src="assets/emily_1.webp" alt="Emily Skye" class="card-image">
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card card-large" id="about-window" data-kind="about"
+           data-title="About me" data-icon="assets/icons/icon2.ico"
+           style="top: 60px; left: 80px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/icon2.ico" alt="">
+            <h1>About me</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body card-body-scroll">
+            <span>I'm <b id="about-age">calculating...</b> old.</span>
+            <span>I am an ok artist. I want peace and love for everyone.</span>
+            <span>I am vegetarian. I love hyperfixating on the most random stuff.</span>
+            <span>My pronouns: she/her/they/them</span>
+
+            <h2 class="section-heading">Besties &lt;3</h2>
+            <div class="friend-tags">
+              <span class="friend-tag">Honi</span>
+              <span class="friend-tag">Duo</span>
+              <span class="friend-tag">Teto</span>
+              <span class="friend-tag">Nara</span>
+              <span class="friend-tag">Moonie</span>
+              <span class="friend-tag">Ash</span>
+              <span class="friend-tag">Raine</span>
+              <span class="friend-tag">Brob</span>
+            </div>
+            <span class="footnote">I love my friends and besties &lt;3 thank you forever nyat for being my best friend &lt;3 love u so much &lt;3</span>
+            <span class="footnote">and I love y'all and you forever (you know who u are &lt;3)</span>
+
+            <h2 class="section-heading">Find me</h2>
+            <div class="contact-row">
+              <a class="contact-chip" href="https://discord.com/users/skye_fall_1" target="_blank" rel="noopener">
+                <img src="https://cdn.simpleicons.org/discord/5865F2" alt="">
+                <span>skye_fall_1</span>
+              </a>
+              <a class="contact-chip" href="https://skyefall-lily.straw.page/" target="_blank" rel="noopener">
+                <img src="assets/icons/strawpage.png" alt="">
+                <span>Strawpage</span>
+              </a>
+              <a class="contact-chip" href="https://www.tiktok.com/@soracookie1" target="_blank" rel="noopener">
+                <img src="https://cdn.simpleicons.org/tiktok/000000" alt="">
+                <span>TikTok</span>
+              </a>
+              <a class="contact-chip" href="https://www.youtube.com/channel/UCi3YxJsiiZQ8vgCw0S26uzQ" target="_blank" rel="noopener">
+                <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="">
+                <span>YouTube</span>
+              </a>
+              <a class="contact-chip" href="https://open.spotify.com/user/31k5ol7tkak46euhsoi6palq5vye" target="_blank" rel="noopener">
+                <img src="https://cdn.simpleicons.org/spotify/1DB954" alt="">
+                <span>Spotify</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card" id="interests-window" data-kind="interests"
+           data-title="Interests" data-icon="assets/icons/icon3.ico"
+           style="top: 90px; left: 120px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/icon3.ico" alt="">
+            <h1>Interests</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body">
+            <ul class="app-list">
+              <li>Drawing</li>
+              <li>Vocaloid</li>
+              <li>Deltarune</li>
+              <li>Frutiger aero</li>
+              <li>My friends &lt;3</li>
+            </ul>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card" id="dontlike-window" data-kind="dontlike"
+           data-title="Don't like" data-icon="assets/icons/icon6.ico"
+           style="top: 120px; left: 160px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/icon6.ico" alt="">
+            <h1>Don't like</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body">
+            <ul class="app-list app-list-dislike">
+              <li>Mean people</li>
+              <li>Shadow Milk Cookie</li>
+            </ul>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card card-wide card-tall" id="gallery-window" data-kind="gallery"
+           data-title="Gallery" data-icon="assets/icons/icon5.ico"
+           style="top: 60px; left: 60px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/icon5.ico" alt="">
+            <h1>Gallery</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body folder-body">
+            <div class="folder-status" id="gallery-status">art/</div>
+            <div class="folder-grid" id="gallery-grid">
+              <!-- populated by js/gallery.js from assets/art/manifest.json -->
+            </div>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <!-- hidden template cloned by gallery.js for each opened image -->
+      <div class="card card-medium card-tall" id="image-viewer-template" data-kind="imageviewer"
+           data-title="Image" data-icon="assets/icons/icon5.ico"
+           style="top: 100px; left: 140px; display:none;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/icon5.ico" alt="">
+            <h1>Image</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body image-viewer-body">
+            <img src="" alt="" class="image-viewer-img">
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card card-medium" id="mediaplayer-window" data-kind="mediaplayer"
+           data-title="Media Player" data-icon="assets/icons/media_player.ico"
+           style="top: 70px; left: 100px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/media_player.ico" alt="">
+            <h1>Media Player</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body card-body-scroll media-player-body">
+            <div class="media-playlist">
+              <div class="media-playlist-header">
+                <span>Emily's Playlist #1</span>
+                <a href="https://open.spotify.com/playlist/47t3ywNfFeeqSj6gJDjvgF" target="_blank" rel="noopener">Open in Spotify ↗</a>
+              </div>
+              <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/47t3ywNfFeeqSj6gJDjvgF?utm_source=generator" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="media-playlist">
+              <div class="media-playlist-header">
+                <span>Emily's Playlist #2</span>
+                <a href="https://open.spotify.com/playlist/3Ccj5BrUVwfVM43ommjZiw" target="_blank" rel="noopener">Open in Spotify ↗</a>
+              </div>
+              <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/3Ccj5BrUVwfVM43ommjZiw?utm_source=generator" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card" id="emiclicker-window" data-kind="emiclicker"
+           data-title="Emi Clicker" data-icon="assets/icons/emiclicker.ico"
+           style="top: 100px; left: 240px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/emiclicker.ico" alt="">
+            <h1>Emi Clicker</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body game-body" id="emiclicker-root"></div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card" id="emitap-window" data-kind="emitap"
+           data-title="Emi Tap" data-icon="assets/icons/emitap.ico"
+           style="top: 120px; left: 280px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/emitap.ico" alt="">
+            <h1>Emi Tap</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body game-body" id="emitap-root"></div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card card-large" id="buddy-window" data-kind="buddy"
+           data-title="Buddy" data-icon="assets/icons/buddy.ico"
+           style="top: 90px; left: 200px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/buddy.ico" alt="">
+            <h1>Buddy</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body buddy-body" id="buddy-root"></div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card card-wide card-tall" id="contacts-window" data-kind="contacts"
+           data-title="Contacts" data-icon="assets/icons/contacts.ico"
+           style="top: 65px; left: 65px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/contacts.ico" alt="">
+            <h1>Contacts</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body folder-body">
+            <div class="folder-status" id="contacts-status">contacts/</div>
+            <div class="folder-grid" id="contacts-grid">
+              <!-- populated by js/contacts.js -->
+            </div>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <!-- hidden template cloned by contacts.js for each opened profile -->
+      <div class="card card-medium card-tall" id="contact-viewer-template" data-kind="contactviewer"
+           data-title="Contact" data-icon="assets/icons/contacts.ico"
+           style="top: 110px; left: 160px; display:none;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/contacts.ico" alt="">
+            <h1>Contact</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="card-body contact-viewer-body">
+            <img src="" alt="" class="contact-viewer-photo">
+            <h2 class="contact-viewer-name"></h2>
+            <p class="contact-viewer-blurb"></p>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <div class="card card-wide card-tall ie-window" id="ie-window" data-kind="ie"
+           data-title="Help and Support" data-icon="assets/icons/help.ico"
+           style="top: 50px; left: 90px;">
+        <div class="card-header">
+          <div class="header-title">
+            <img src="assets/icons/help.ico" alt="">
+            <h1>Help and Support - Windows Internet Explorer</h1>
+          </div>
+          <div class="header-btns">
+            <button class="header-minimize" title="Minimize">–</button>
+            <button class="header-maximize" title="Maximize">▢</button>
+            <button class="header-exit" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="card-background">
+          <div class="ie-chrome">
+            <div class="ie-toolbar">
+              <button class="ie-nav-btn">◀</button>
+              <button class="ie-nav-btn">▶</button>
+              <button class="ie-nav-btn">⟳</button>
+              <div class="ie-address-bar">
+                <img src="assets/icons/help.ico" alt="">
+                <span>http://www.novodude.me/aboutme.htm</span>
+              </div>
+              <button class="ie-go-btn">Go</button>
+            </div>
+            <div class="ie-tabs">
+              <div class="ie-tab active">About the Programmer</div>
+            </div>
+          </div>
+          <div class="card-body card-body-scroll ie-page">
+            <div class="blog-header">
+              <img src="assets/novo-profile.png" alt="Novo" class="blog-avatar">
+              <div>
+                <h1 class="blog-title">novodude's corner of the web</h1>
+                <p class="blog-subtitle">under construction since forever :: best viewed at 1024x768</p>
+              </div>
+            </div>
+            <hr class="blog-rule">
+            <div class="blog-post">
+              <h2>hii, i'm novo &lt;3</h2>
+              <p>
+                i'm the one who built this whole site for Emily! i'm a self-taught
+                developer who spends most of my time writing Python and JavaScript,
+                usually way past midnight. i build Discord bots, mess around with
+                fine-tuning language models, and make silly little interactive
+                things like this website.
+              </p>
+              <p>
+                right now i'm working on <b>Amber</b>, a big feature-packed Discord bot,
+                and <b>Lunita</b>, my own fine-tuned AI model that draws her own art
+                and has her own little personality. i also like building weird
+                nostalgic UI like this Windows 7 desktop you're looking at right now!
+              </p>
+            </div>
+            <hr class="blog-rule">
+            <div class="blog-links">
+              <a class="blog-link-btn" href="https://discord.com/users/novodude" target="_blank" rel="noopener">
+                <img src="https://cdn.simpleicons.org/discord/5865F2" alt="">
+                novodude
+              </a>
+              <a class="blog-link-btn" href="mailto:akonovodude@gmail.com">
+                <img src="https://cdn.simpleicons.org/gmail/EA4335" alt="">
+                akonovodude@gmail.com
+              </a>
+              <a class="blog-link-btn" href="https://novodude.me" target="_blank" rel="noopener">
+                <img src="https://cdn.simpleicons.org/googlechrome/4285F4" alt="">
+                novodude.me
+              </a>
+              <a class="blog-link-btn" href="https://github.com/novodude" target="_blank" rel="noopener">
+                <img src="https://cdn.simpleicons.org/github/181717" alt="">
+                github.com/novodude
+              </a>
+            </div>
+            <div class="blog-badge-row">
+              <span class="blog-badge">✦ Made with vanilla JS ✦</span>
+              <span class="blog-badge">100% Frutiger Aero</span>
+              <span class="blog-badge">Best friends approved &lt;3</span>
+            </div>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <!-- ============================================================
+           START MENU
+           ============================================================ -->
+      <div class="start-menu" id="start-menu">
+        <div class="start-menu-apps">
+          <div class="start-menu-item" data-window="whoami-window">
+            <img src="assets/icons/icon1.ico" alt="">
+            <span>Who am I?</span>
+          </div>
+          <div class="start-menu-item" data-window="about-window">
+            <img src="assets/icons/icon2.ico" alt="">
+            <span>About me</span>
+          </div>
+          <div class="start-menu-item" data-window="interests-window">
+            <img src="assets/icons/icon3.ico" alt="">
+            <span>Interests</span>
+          </div>
+          <div class="start-menu-item" data-window="gallery-window">
+            <img src="assets/icons/icon5.ico" alt="">
+            <span>Gallery</span>
+          </div>
+          <div class="start-menu-item" data-window="dontlike-window">
+            <img src="assets/icons/icon6.ico" alt="">
+            <span>Don't like</span>
+          </div>
+          <div class="start-menu-item" data-window="mediaplayer-window">
+            <img src="assets/icons/media_player.ico" alt="">
+            <span>Media Player</span>
+          </div>
+          <div class="start-menu-item" data-window="contacts-window">
+            <img src="assets/icons/contacts.ico" alt="">
+            <span>Contacts</span>
+          </div>
+
+          <div class="start-menu-item start-menu-folder" id="games-folder">
+            <img src="assets/icons/games.ico" alt="">
+            <span>Games</span>
+            <span class="folder-arrow">▶</span>
+            <div class="start-menu-flyout" id="games-flyout">
+              <div class="start-menu-item" data-window="emiclicker-window">
+                <img src="assets/icons/emiclicker.ico" alt="">
+                <span>Emi Clicker</span>
+              </div>
+              <div class="start-menu-item" data-window="emitap-window">
+                <img src="assets/icons/emitap.ico" alt="">
+                <span>Emi Tap</span>
+              </div>
+              <div class="start-menu-item" data-window="buddy-window">
+                <img src="assets/icons/buddy.ico" alt="">
+                <span>Buddy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="start-menu-sidebar">
+          <div class="start-menu-sidebar-profile">
+            <img src="assets/emily-profile.png" alt="Emily Skye">
+          </div>
+          <div class="start-menu-sidebar-items">
+            <div class="start-menu-sidebar-item" data-window="whoami-window">
+              <span>Emily Skye</span>
+            </div>
+            <div class="start-menu-sidebar-item" data-window="gallery-window">
+              <span>Pictures</span>
+            </div>
+            <div class="start-menu-sidebar-item" id="sidebar-games-item">
+              <span>Games</span>
+            </div>
+            <div class="start-menu-sidebar-divider"></div>
+            <div class="start-menu-sidebar-item" data-window="ie-window">
+              <span>Help and Support</span>
+            </div>
+          </div>
+          <div class="start-menu-sidebar-btns">
+            <button class="shutdown-btn" id="shutdown-btn">Shut down</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           TASKBAR
+           ============================================================ -->
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <div class="start-icon">
+            <img src="assets/icons/start.png" alt="Start Menu">
+          </div>
+          <div class="toolbar-divider"></div>
+          <div class="taskbar-apps" id="taskbar-apps">
+            <!-- populated dynamically: one button per open window / group -->
+          </div>
+        </div>
+        <div class="toolbar-right">
+          <div class="date-time">
+            <span id="time">10:32pm</span>
+            <span id="date">Monday, 1 January 2024</span>
+          </div>
+          <div class="hide-windows" id="hide-windows"></div>
+        </div>
+      </div>
+
+      <!-- shutdown screen -->
+      <div class="shutdown-screen" id="shutdown-screen">
+        <div class="boot-logo">
+          <img src="assets/icons/start.png" alt="">
+          <span class="shutdown-text">Shutting down...</span>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="js/os.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/mediaplayer.js"></script>
+    <script src="js/games/emiclicker.js"></script>
+    <script src="js/games/emitap.js"></script>
+    <script src="js/games/buddy.js"></script>
+    <script src="js/contacts.js"></script>
+    <script src="js/boot.js"></script>
+  </body>
+</html>
