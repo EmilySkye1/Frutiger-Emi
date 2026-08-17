@@ -1,14 +1,8 @@
-/*
- * boot.js — runs the boot sequence: a brief logo screen, then the Windows
- * 7-style intro video (assets/intro.mp4), then reveals the desktop.
- * If the video file is missing or fails to play, we don't get stuck --
- * it just falls through to the desktop.
- */
-
 (function() {
   const bootScreen = document.getElementById('boot-screen');
   const introWrap = document.getElementById('intro-video-wrap');
   const introVideo = document.getElementById('intro-video');
+  const skipBtn = document.getElementById('skip-intro');
   const desktop = document.getElementById('desktop');
 
   desktop.classList.add('booting');
@@ -38,6 +32,11 @@
 
   introVideo.addEventListener('ended', finishIntro);
   introVideo.addEventListener('error', finishIntro);
+
+  skipBtn.addEventListener('click', () => {
+    introVideo.pause();
+    finishIntro();
+  });
 
   setTimeout(startIntro, 1800);
 })();

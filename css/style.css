@@ -91,6 +91,66 @@ body {
   font-size: 14px;
 }
 
+.skip-intro {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  z-index: 10;
+
+  padding: 6px 18px;
+  min-width: 90px;
+
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 12px;
+  color: #1a1a1a;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  border-radius: 4px;
+  border: 1px solid #6b8ba4;
+  cursor: pointer;
+
+  /* classic Aero glossy gradient */
+  background: linear-gradient(to bottom,
+      #f4f9fd 0%,
+      #dcecfb 45%,
+      #c4e0f9 46%,
+      #a8d2f0 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.skip-intro:hover {
+  border-color: #3c7fb1;
+  background: linear-gradient(to bottom,
+      #fdfefe 0%,
+      #d7edfc 45%,
+      #b8e2fb 46%,
+      #8fcdf5 100%);
+}
+
+.skip-intro:active {
+  background: linear-gradient(to bottom,
+      #bcdcf4 0%,
+      #a5cdef 45%,
+      #8ebfe9 46%,
+      #6fabd8 100%);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.25),
+    0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.skip-intro:focus {
+  outline: none;
+  border-color: #3c7fb1;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 0 0 2px rgba(76, 155, 224, 0.35);
+}
+
 @keyframes boot-pulse {
 
   0%,
